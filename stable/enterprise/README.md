@@ -967,7 +967,7 @@ This rollback procedure is designed to revert your environment to its pre-migrat
 ### Anchore Configuration Parameters
 
 | Name                                                                             | Description                                                                                                                      | Value              |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+|----------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------| ------------------ |
 | `anchoreConfig.service_dir`                                                      | Path to directory where default Anchore config files are placed at startup                                                       | `/anchore_service` |
 | `anchoreConfig.log_level`                                                        | The log level for Anchore services                                                                                               | `INFO`             |
 | `anchoreConfig.allow_awsecr_iam_auto`                                            | Enable AWS IAM instance role for ECR auth                                                                                        | `true`             |
@@ -995,6 +995,7 @@ This rollback procedure is designed to revert your environment to its pre-migrat
 | `anchoreConfig.database.db_pool_size`                                            | The database max connection pool size                                                                                            | `30`               |
 | `anchoreConfig.database.db_pool_max_overflow`                                    | The maximum overflow size of the database connection pool                                                                        | `100`              |
 | `anchoreConfig.database.engineArgs`                                              | Set custom database engine arguments for SQLAlchemy                                                                              | `{}`               |
+| `anchoreConfig.database.dbConnectArgs`                                           | Set custom database connection arguments for SQLAlchemy. This is mutually exclusive with ssl, sslmode, and sslRootCertFilename   | `{}`               |
 | `anchoreConfig.internalServicesSSL.enabled`                                      | Force all Enterprise services to use SSL for internal communication                                                              | `false`            |
 | `anchoreConfig.internalServicesSSL.verifyCerts`                                  | Enable cert verification against the local cert bundle, if this set to false self-signed certs are allowed                       | `false`            |
 | `anchoreConfig.internalServicesSSL.certSecretKeyFileName`                        | File name of the private key used for internal SSL stored in the secret specified in .Values.certStoreSecretName                 | `""`               |
